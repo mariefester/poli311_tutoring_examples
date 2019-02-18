@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1550494316124.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BFA04B1A",
+    "lastKnownWriteTime" : 11550773376712710,
+    "last_content_update" : 1550494316124,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7D19536E",
+        "caption" : "americas",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=americas&cache_key=7D19536E",
+        "displayedObservations" : 72,
+        "environment" : "",
+        "object" : "americas",
+        "preview" : 0,
+        "totalObservations" : 72,
+        "variables" : 29
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

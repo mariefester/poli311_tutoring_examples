@@ -1,0 +1,2 @@
+"0","# Add layers to the plot; you can change the line type (lty) to differentiate the regions"
+"0","lines(names(asia.assassinations), asia.assassinations, lty = ""dotdash"", type = ""l"")"

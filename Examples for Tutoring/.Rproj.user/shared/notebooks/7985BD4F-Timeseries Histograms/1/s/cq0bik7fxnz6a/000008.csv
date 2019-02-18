@@ -1,0 +1,3 @@
+"0","pacman::p_load(ggplot2, dplyr, wesanderson)"
+"0","leaders <- read.csv(""leaders.csv"")"
+"0","leaders <- leaders[(1:250), (14:28)]"

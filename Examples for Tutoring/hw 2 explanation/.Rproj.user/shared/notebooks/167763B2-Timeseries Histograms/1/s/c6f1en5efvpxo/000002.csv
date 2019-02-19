@@ -1,0 +1,4 @@
+"0","plot(x = leaders$politybefore, y = leaders$polityafter,"
+"0","     main = ""Scatterplot: Polity Scores Before and After Assassination"","
+"0","     xlab = ""Polity Before"","
+"0","     ylab = ""Polity After"")"

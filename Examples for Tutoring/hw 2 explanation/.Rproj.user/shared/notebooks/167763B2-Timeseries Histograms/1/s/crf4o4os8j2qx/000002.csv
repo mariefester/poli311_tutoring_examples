@@ -1,0 +1,7 @@
+"0","# The first layer; choose one subset to plot"
+"0","plot(x = names(americas.assassinations), y = americas.assassinations, col = ""black"", type = ""l"","
+"0","     ylim = c(0, 15),"
+"0","# The next three lines add titles"
+"0","     main = ""Assassinations by Decade and Region"","
+"0","     xlab = ""Decade"","
+"0","     ylab = ""Number of Assassinations"")"

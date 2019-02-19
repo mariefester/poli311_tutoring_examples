@@ -1,0 +1,5 @@
+"0","ggplot(data = leaders, mapping = aes(x = leaders$dummy, "
+"0","                                     fill = as.factor(decade))) +"
+"0","  geom_bar(position = ""dodge"") + "
+"0","  labs(title = ""Assassination Attempts by Year"", x = ""Assassination Attempt"", "
+"0","       y = ""Number of Occurences"", fill = ""Year"")"

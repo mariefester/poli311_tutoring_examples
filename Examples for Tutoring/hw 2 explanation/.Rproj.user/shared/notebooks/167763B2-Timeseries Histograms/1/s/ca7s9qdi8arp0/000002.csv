@@ -1,0 +1,3 @@
+"0","boxplot(formula = politybefore ~ continent, data = leaders, "
+"0","        main = ""Boxplots of Polity Score Before an Assassination"","
+"0","        xlab = ""Continent"", ylab = ""Polity Score"")"

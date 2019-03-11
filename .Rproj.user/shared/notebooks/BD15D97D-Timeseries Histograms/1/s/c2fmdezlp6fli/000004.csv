@@ -1,0 +1,4 @@
+"0","ggplot(data = leaders, aes(x = continent, y = politybefore, group = as.factor(continent))) +"
+"0","  geom_violin() +"
+"0","  labs(title = ""Boxplots of Polity Score Before an Assassination"", subtitle = ""By Continent"","
+"0","       x = ""Continent"", y = ""Polity Score"")"

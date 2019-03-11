@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552340400707.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "64AC28BC",
+    "lastKnownWriteTime" : 6,
+    "last_content_update" : 1552340400707,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "B68C3429",
+        "caption" : "leaders",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=leaders&cache_key=B68C3429",
+        "displayedObservations" : 250,
+        "environment" : "",
+        "object" : "leaders",
+        "preview" : 0,
+        "totalObservations" : 250,
+        "variables" : 16
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

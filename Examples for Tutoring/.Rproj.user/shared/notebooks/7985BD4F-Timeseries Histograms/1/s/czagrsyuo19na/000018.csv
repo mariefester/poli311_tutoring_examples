@@ -1,4 +1,0 @@
-"0","ggplot(data = leaders, aes(x = continent, y = politybefore, group = as.factor(continent))) +"
-"0","  geom_boxplot() +"
-"0","  labs(title = ""Boxplots of Polity Score Before an Assassination"", sub = ""By Continent"","
-"0","       x = ""Continent"", y = ""Polity Score"")"

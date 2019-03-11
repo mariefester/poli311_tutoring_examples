@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1552344356829.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1399801323",
+    "id" : "DD57E818",
+    "lastKnownWriteTime" : 1552344396,
+    "last_content_update" : 1552344396407,
+    "path" : "~/Documents/GitHub/poli311_tutoring_examples/Timeseries and Histograms.Rmd",
+    "project_path" : "Timeseries and Histograms.Rmd",
+    "properties" : {
+        "cursorPosition" : "1,46",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

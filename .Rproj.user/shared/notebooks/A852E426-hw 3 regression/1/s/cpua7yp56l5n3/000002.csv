@@ -1,5 +1,0 @@
-"0","leaders$success <- ifelse(leaders$result == ""dies between a day and a week""| "
-"0","                                 leaders$result ==""dies between a week and a month""| "
-"0","                                 leaders$result == ""dies within a day after the attack""|"
-"0","                                 leaders$result == ""dies, timing unknown"", 1, 0)"
-"0","leaders <- mutate(leaders, diff = polityafter - politybefore)"

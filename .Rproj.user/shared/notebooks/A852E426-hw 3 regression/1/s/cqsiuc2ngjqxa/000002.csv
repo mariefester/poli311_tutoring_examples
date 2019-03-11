@@ -1,2 +1,0 @@
-"0","pacman::p_load(ggplot2, dplyr, wesanderson, texreg)"
-"0","leaders <- read.csv(""leaders.csv"")"

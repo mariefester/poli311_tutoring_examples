@@ -1,8 +1,0 @@
-"0","americas <- subset(leaders, leaders$continent == ""Americas"")"
-"0","asia <- subset(leaders, leaders$continent == ""Asia""|"
-"0","                                leaders$region ==  ""Western Asia"")"
-"0","europe <- subset(leaders, leaders$continent == ""Europe"")"
-"0","# These next lines creates lists with name = year and the value = number of assassination attempts"
-"0","americas.assassinations <- tapply(americas$dummy, americas$decade, sum)"
-"0","asia.assassinations <- tapply(asia$dummy, asia$decade, sum)"
-"0","europe.assassinations <- tapply(europe$dummy, europe$decade, sum)"

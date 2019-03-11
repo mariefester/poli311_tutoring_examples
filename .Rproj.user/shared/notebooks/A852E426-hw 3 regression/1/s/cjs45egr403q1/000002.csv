@@ -1,5 +1,0 @@
-"0","# We add three new columsn to the leaders dataset, for the estimate, and the lower and upper bounds"
-"0","# of the confidence interval (based on the standard deviation)"
-"0","# we use the predict function, calling the model, then the dataset to draw values from"
-"0","# set interval = confidence; the default is the 95% confidence interval"
-"0","leaders[, c(""fit"", ""lwr"", ""upr"")] <- predict(model3, leaders, interval = ""confidence"")"

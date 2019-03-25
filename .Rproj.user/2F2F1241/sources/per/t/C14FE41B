@@ -1,19 +1,22 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1552344351064.000,
+    "created" : 1553547027181.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "2433345015",
-    "id" : "C8A14C3F",
+    "id" : "C14FE41B",
     "lastKnownWriteTime" : 1552343753,
-    "last_content_update" : 1552343753,
+    "last_content_update" : 1553547056870,
     "path" : "~/Documents/GitHub/poli311_tutoring_examples/Regression and Predict.Rmd",
     "project_path" : "Regression and Predict.Rmd",
     "properties" : {
+        "cursorPosition" : "27,61",
+        "last_setup_crc32" : "9F345A52bb338d19",
+        "scrollLine" : "0"
     },
-    "relative_order" : 2,
+    "relative_order" : 4,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_markdown"

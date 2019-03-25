@@ -58,12 +58,15 @@ Boxplots are used to understand data dispersion and represent summary statistics
 ```{r}
 ggplot(data = leaders, aes(x = continent, y = politybefore, group = as.factor(continent))) +
   geom_boxplot() +
-  labs(title = "Boxplots of Polity Score Before an Assassination", subtitle = "By Continent",
+  labs(title = "Boxplots of Polity Score Before an Assassination", 
+       subtitle = "By Continent",
        x = "Continent", y = "Polity Score")
 
-ggplot(data = leaders, aes(x = continent, y = politybefore, group = as.factor(continent))) +
+ggplot(data = leaders, aes(x = continent, y = politybefore, 
+                           group = as.factor(continent))) +
   geom_violin() +
-  labs(title = "Boxplots of Polity Score Before an Assassination", subtitle = "By Continent",
+  labs(title = "Boxplots of Polity Score Before an Assassination", 
+       subtitle = "By Continent",
        x = "Continent", y = "Polity Score")
 
 ```

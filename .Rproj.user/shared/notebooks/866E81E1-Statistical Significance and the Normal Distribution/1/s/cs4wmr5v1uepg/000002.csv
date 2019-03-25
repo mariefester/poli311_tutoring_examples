@@ -1,0 +1,8 @@
+"0","treat <- subset(leaders, success == 1)"
+"0","control <- subset(leaders, success == 0)"
+"0","treat.mean <- mean(treat$diff, na.rm = T)"
+"0","control.mean <- mean(control$diff, na.rm = T)"
+"0","treat.sd <- sd(treat$diff, na.rm = T)"
+"0","control.sd <- sd(control$diff, na.rm = T)"
+"0","treat.se <- treat.sd/sqrt(nrow(treat))"
+"0","control.se <- control.sd/sqrt(nrow(control))"

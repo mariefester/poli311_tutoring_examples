@@ -1,0 +1,6 @@
+"0","# p_load is a function in the pacman package which installs a package if haven't already and "
+"0","# then calls it using the library() function"
+"0","pacman::p_load(ggplot2, dplyr, wesanderson, ggfortify)"
+"0","leaders <- read.csv(""leaders.csv"")"
+"0","# Drop the first 14 empty columns"
+"0","leaders <- leaders[(1:250), (15:28)]"

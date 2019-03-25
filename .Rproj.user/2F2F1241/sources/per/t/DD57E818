@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1399801323",
+    "hash" : "3364728354",
     "id" : "DD57E818",
-    "lastKnownWriteTime" : 1552344396,
-    "last_content_update" : 1552344396407,
+    "lastKnownWriteTime" : 1553547021,
+    "last_content_update" : 1553547021837,
     "path" : "~/Documents/GitHub/poli311_tutoring_examples/Timeseries and Histograms.Rmd",
     "project_path" : "Timeseries and Histograms.Rmd",
     "properties" : {
-        "cursorPosition" : "1,46",
-        "scrollLine" : "0"
+        "cursorPosition" : "68,7",
+        "scrollLine" : "42"
     },
     "relative_order" : 3,
     "source_on_save" : false,

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1554231616317.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1436835508",
+    "id" : "6675FF40",
+    "lastKnownWriteTime" : 1554231818,
+    "last_content_update" : 1554231818463,
+    "path" : "~/Documents/GitHub/poli311_tutoring_examples/Quick Data Reshaping Demo.Rmd",
+    "project_path" : "Quick Data Reshaping Demo.Rmd",
+    "properties" : {
+        "cursorPosition" : "27,0",
+        "scrollLine" : "6",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

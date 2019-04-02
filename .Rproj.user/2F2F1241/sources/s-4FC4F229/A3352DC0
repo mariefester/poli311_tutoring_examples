@@ -12,15 +12,15 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "65C6A7C4",
+        "cacheKey" : "90028B63",
         "caption" : "leaders",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=leaders&cache_key=65C6A7C4",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=leaders&cache_key=90028B63",
         "displayedObservations" : "250",
         "environment" : "",
         "object" : "leaders",
         "preview" : "0",
         "totalObservations" : "250",
-        "variables" : "15"
+        "variables" : "16"
     },
     "relative_order" : 3,
     "source_on_save" : false,

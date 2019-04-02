@@ -35,7 +35,7 @@ leaders <- mutate(leaders, diff = polityafter - politybefore)
 
 In this section I use the ggfortify package to plot the normal distribution. You will not need this package for your homework
 
-This chunk shows a standard normal distribution. By the law of large numbers, the distribution of means will always be normal. We use standardized scores, like the z-score to overlay a non-normal distrubution on the normal.
+This chunk shows a standard normal distribution. By the law of large numbers, the distribution of means will always be normal. We use standardized scores, like the z-score to overlay a non-normal distribution on the normal.
 
 ```{r}
 # The standard normal has a mean of 0 and a SD of 1
@@ -74,7 +74,7 @@ ggdistribution(pnorm, seq(-5, 5, 0.1), mean = 0, sd = 1) +
 
 # Using the Normal to for Statistical Significance
 
-In this example I continue using the leaders dataset and our hypothesis that a successful leader assassination leads to higher polity scores. I start with a basic example of a confidence interval and p-value then apply these concepts to test teh significance of the difference in means.
+In this example I continue using the leaders dataset and our hypothesis that a successful leader assassination leads to higher polity scores. I start with a basic example of a confidence interval and p-value then apply these concepts to test the significance of the difference in means.
 
 ## Confidence Intervals
 
@@ -92,7 +92,7 @@ se <- sd/sqrt(nrow(leaders))
 
 # Step 3, find the confidence level quantile
 # input the confidence level, mean, and sd of the distribution, it will give you a number
-quantile.value <- qnorm(0.95, xbar, sd)
+quantile.value <- qnorm(0.95, 0, 1)
 
 # Step 4, build your CI ~ don't forget to use standard error not standard deviation
 lwr <- xbar - (quantile.value*se)
@@ -102,7 +102,7 @@ ci <- c(lwr, upr)
 ci
 ```
 
-Since the confidence interval contains zero, we cannto rule out the null hypothesis that the true mean is 0.
+Since the confidence interval does not contain zero, we reject the null hypothesis that the true mean is 0. Polity scores afterward decline by approximately  1-2.3 points (with 95% probability) after an assassination attempt.
 
 ## P-Values
 
@@ -116,7 +116,7 @@ z.score <- (xbar - 0)/sd
 # Step 2, get the p-value for the z score
 # The p-value returns the area under the curve to the left (lower tail) of the z score
 # Here I changed the defualt to return the upper tail
-p.value <- pnorm(z.score, mean = xbar, sd = sd, lower.tail = F)
+p.value <- pnorm(z.score, mean = 0, sd = 1, lower.tail = F)
 
 # Side note, here's a visual of what we just did
 ggdistribution(dnorm, seq(-20, 20, 0.01), mean = xbar, sd = sd) + 
@@ -141,11 +141,11 @@ Here we d not reject the null because the p value is very small (close to 0) whi
 
 ## Applying this to difference in means
 
-Here I test the difference between the means of polity score before and after a successful assasination attempt. We are going to compare the mean DIM for the treated (successful assassination) and control groups.
+Here I test the difference between the means of polity score before and after a successful assassination attempt. We are going to compare the mean DIM for the treated (successful assassination) and control groups.
 
 ### First prepare the data
 
-Subset to only the treated and control groups; recall we already have the diff variable which is the difference betwen pre and post polity scores
+Subset to only the treated and control groups; recall we already have the diff variable which is the difference between pre and post polity scores
 ```{r}
 treat <- subset(leaders, success == 1)
 control <- subset(leaders, success == 0)
@@ -173,7 +173,7 @@ joint.se <- sqrt((var(treat$diff)/nrow(treat)) +
 dim <- treat.mean - control.mean
 
 # Find the quantile
-q <- qnorm(0.95, dim, joint.se)
+q <- qnorm(0.95, 0, 1)
 
 # Make the CI
 lower <- dim - (joint.se*q)
@@ -193,7 +193,7 @@ The 95% confidence interval contains 0, therefore we cannot reject the null. The
 z.score.joint <- (dim - 0)/joint.se
 
 # Find the p value
-p.value.joint <- pnorm(z.score.joint, dim, joint.se, lower.tail = F)
+p.value.joint <- pnorm(z.score.joint, 0, 1, lower.tail = F)
 
 # Check what's going on
 ifelse(p.value.joint > 0.05, "Do not reject the null", "Reject the null")

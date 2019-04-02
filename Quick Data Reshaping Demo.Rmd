@@ -2,7 +2,7 @@
 title: "Quick Data Reshaping Demo"
 author: "Marie Fester"
 date: '2019-04-02'
-output: html_document
+output: github_document
 ---
 
 ```{r setup, include=FALSE}

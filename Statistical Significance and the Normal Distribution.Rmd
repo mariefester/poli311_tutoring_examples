@@ -42,7 +42,7 @@ This chunk shows a standard normal distribution. By the law of large numbers, th
 # The theoretical PDF is
 ggdistribution(dnorm, seq(-5, 5, 0.1), mean = 0, sd = 1) + 
   geom_vline(xintercept = (qnorm(0.95, 0, 1)), colour = "blue") + 
-  geom_vline(xintercept = (qnorm(0.05, 0, 1)), colour = "dark blue") + 
+  geom_vline(xintercept = (qnorm(0.05, 0, 1)), colour = "green") + 
   labs(title = "Plot of the Theoretical PDF of the Normal Distribution",
        subtitle = "Mean of 0 and Standard Deviation of 1") +
   xlab("Value") +
@@ -78,7 +78,7 @@ In this example I continue using the leaders dataset and our hypothesis that a s
 
 ## Confidence Intervals
 
-In this chunk I make a confidence interval around the polity score for all countries. We will test the mean against the hypothesis that mean polity scores are not 0. We will do a one tailed test at the 95% level.
+In this chunk I make a confidence interval around the polity score for all countries. We will test the mean against the hypothesis that mean polity scores are not 0. We will do a two tailed test at the 90% level.
 
 What is a confidence interval (CI)? X-bar plus or minus (the standard deviation multiplied by the confidence level quantile).
 
@@ -102,7 +102,7 @@ ci <- c(lwr, upr)
 ci
 ```
 
-Since the confidence interval does not contain zero, we reject the null hypothesis that the true mean is 0. Polity scores afterward decline by approximately  1-2.3 points (with 95% probability) after an assassination attempt.
+Since the confidence interval does not contain zero, we reject the null hypothesis that the true mean is 0. Polity scores afterward decline by approximately  1-2.3 points (with 90% probability) after an assassination attempt.
 
 ## P-Values
 
@@ -116,12 +116,12 @@ z.score <- (xbar - 0)/sd
 # Step 2, get the p-value for the z score
 # The p-value returns the area under the curve to the left (lower tail) of the z score
 # Here I changed the defualt to return the upper tail
-p.value <- pnorm(z.score, mean = 0, sd = 1, lower.tail = F)
+p.value <- pnorm(z.score, mean = 1, sd = 0, lower.tail = F)
 
 # Side note, here's a visual of what we just did
 ggdistribution(dnorm, seq(-20, 20, 0.01), mean = xbar, sd = sd) + 
   geom_vline(xintercept = (qnorm(0.95, xbar, sd)), colour = "blue") + 
-  geom_vline(xintercept = (p.value), colour = "dark blue") +
+  geom_vline(xintercept = (p.value), colour = "green") +
   labs(title = "Plot of the PDF of the Normal Distribution",
        subtitle = "Mean of -1.65 and Standard Deviation of 6.5") +
   xlab("Value") + ylab("Probability of Value Occuring") +
@@ -172,8 +172,8 @@ joint.se <- sqrt((var(treat$diff)/nrow(treat)) +
 # Difference in means
 dim <- treat.mean - control.mean
 
-# Find the quantile
-q <- qnorm(0.95, 0, 1)
+# Find the quantile; 2.5% in each tail
+q <- qnorm(0.975, 0, 1)
 
 # Make the CI
 lower <- dim - (joint.se*q)

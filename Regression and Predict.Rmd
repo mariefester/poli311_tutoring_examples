@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 ```{r}
-pacman::p_load(ggplot2, dplyr, wesanderson, texreg)
+pacman::p_load(ggplot2, tidyverse, wesanderson, texreg)
 
 leaders <- read.csv("leaders.csv")
 ```
@@ -71,7 +71,7 @@ leaders[, c("fit", "lwr", "upr")] <- predict(model3, leaders, interval = "confid
 
 ## Plot 'em
 
-Next up we want to visualize the predicted values, I show an example here in ggplot, but you can also use base r to plot them. For more examples of plots, check out the last tutoring handout on timeseries and histograms.
+Next up we want to visualize the predicted values for the emprical data, I show an example here in ggplot, but you can also use base r to plot them. For more examples of plots, check out the last tutoring handout on timeseries and histograms.
 
 ```{r}
 # The first layer plots the actual values
@@ -83,12 +83,62 @@ ggplot(leaders, aes(x = year, y = diff, color = as.factor(success))) + geom_poin
 # aesthetics as it did in the first layer, I give the points a different shape to see the difference
 # between our predicted and actual data
   geom_point(inherit.aes = FALSE, data = leaders, 
-             mapping = aes(x = year, y = fit, color = as.factor(success)), shape = 17, size = 2.5)
+             mapping = aes(x = year, y = fit, color = as.factor(success)), 
+             shape = 17, size = 2.5)
 ```
 
 
-Overall, the data is clustered around 0, there are ibservation where the polity increase a lot and also ones with large derceases after an assassination attempt, no matter success. We see that success does seem to have an effect on polity scores; success is not sorted to either side of 0. There are many more unsuccessful attempts. The predicted values are less noisy; there is much less variation, this is because the predicted values are based on a model which makes estimates based on the average data point.
+Overall, the data is clustered around 0, there are observations where the polity increase a lot and also ones with large derceases after an assassination attempt, no matter success. We see that success does seem to have an effect on polity scores; success is not sorted to either side of 0. There are many more unsuccessful attempts. The predicted values are less noisy; there is much less variation, this is because the predicted values are based on a model which makes estimates based on the average data point.
 
+# Predicted values using fake data
+## Making fake data
+
+If you want to generate 'fake data' to plot your predictions, here's how! First off, Model 3 has the following variables: success, age, region, and decade. So we want to make sure that we get every possible combination of these variables, this can be done manually or using the expand_grid function from tidyr (there is also an expand.grid function from base r that works similarly, but the tidyverse version can handle more inputs so that's what I will use).
+
+```{r}
+# Success is either a zero or a 1
+success_cats <- c(0, 1) 
+
+# Make a vector with all possible ages from the minimum to the maximum
+age_range <- seq(from = min(leaders$age), to = max(leaders$age), by = 1)
+
+# Make a vector with a list of regions
+regions_all <- unique(leaders$region)
+
+# Finally a vector with al the decades
+decades <- seq(from = min(leaders$decade), to = max(leaders$decade), by = 10)
+
+# Now pass these to the expand grid function. Everything the left of an = will be the new column
+# name so make sure that the names are the same as in the original datafram, otherwise predict 
+# won't work
+fake_leaders <- expand_grid(success = success_cats, 
+                            age = age_range,
+                            region = regions_all,
+                            decade = decades)
+
+# Now use predict on the data; pass the model name, the data, and then if you want
+# to generate confidence intervals add that
+fake_leaders[, c("upr", "lwr", "fit")] <- predict(model3, 
+                                                  fake_leaders, 
+                                                  interval = "confidence")
+```
+
+## Plot'em
+```{r}
+ggplot(data = fake_leaders) +
+# For geom_point needed to use colour instead of fill for this to work
+  geom_point(aes(x = age, y = fit, colour = as.factor(success)),
+             alpha = 0.4, size = 0.5) +
+  labs(x = "Leader Age",
+       y = "Predicted Difference in Polity Score After an Assassination",
+# colour sets the legend title for the colour argument
+       colour = "Success of\nAttempt",
+       title = "Predicive Plot of Change in Polity Scores After an Assassination Attempt",
+       subtitle = "Coloured by Success of Attempt") +
+# Use scale colour manual to set custom labels and colours for the colour argument
+  scale_colour_manual(labels = c("Unsuccessful", "Successful"),
+                      values = c("red3", "greenyellow"))
+```
 
 
 

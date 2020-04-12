@@ -263,6 +263,7 @@ fake_leaders_subset <- filter(fake_leaders, decade == 1995, region == "Southern 
 ggplot(data = fake_leaders_subset, aes(x = age, y = fit)) +
   geom_line() +
   geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+  facet_wrap(.~success) +
   labs(x = "Leader Age",
        y = "Predicted Difference in Polity Score After an Assassination",
        colour = "Success of\nAttempt",

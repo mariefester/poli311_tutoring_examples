@@ -229,7 +229,7 @@ fake_leaders <- expand_grid(success = success_cats,
 
 # Now use predict on the data; pass the model name, the data, and then if you want
 # to generate confidence intervals add that
-fake_leaders[, c("upr", "lwr", "fit")] <- predict(model3, 
+fake_leaders[, c("fit", "lwr", "upr")] <- predict(model3, 
                                                   fake_leaders, 
                                                   interval = "confidence")
 ```
@@ -255,3 +255,19 @@ ggplot(data = fake_leaders) +
     ## Warning: Removed 1792 rows containing missing values (geom_point).
 
 ![](Regression-and-Predict_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+``` r
+# We can also plot a subset of the data as a line with a shaded confidence interval
+fake_leaders_subset <- filter(fake_leaders, decade == 1995, region == "Southern Asia")
+
+ggplot(data = fake_leaders_subset, aes(x = age, y = fit)) +
+  geom_line() +
+  geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
+  labs(x = "Leader Age",
+       y = "Predicted Difference in Polity Score After an Assassination",
+       colour = "Success of\nAttempt",
+       title = "Predicive Plot of Change in Polity Scores After an Assassination Attempt\nin Southern Asia in 1995",
+       subtitle = "Coloured by Success of Attempt") 
+```
+
+![](Regression-and-Predict_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->

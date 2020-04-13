@@ -260,15 +260,18 @@ ggplot(data = fake_leaders) +
 # We can also plot a subset of the data as a line with a shaded confidence interval
 fake_leaders_subset <- filter(fake_leaders, decade == 1995, region == "Southern Asia")
 
+success.labs <- c("Leader Dies", "Leader Lives")
+names(success.labs) <- c(1, 0)
+
 ggplot(data = fake_leaders_subset, aes(x = age, y = fit)) +
   geom_line() +
-  geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2) +
-  facet_wrap(.~success) +
+  geom_ribbon(aes(ymin = lwr, ymax = upr), alpha = 0.2)  +
   labs(x = "Leader Age",
        y = "Predicted Difference in Polity Score After an Assassination",
        colour = "Success of\nAttempt",
        title = "Predicive Plot of Change in Polity Scores After an Assassination Attempt\nin Southern Asia in 1995",
-       subtitle = "Coloured by Success of Attempt") 
+       subtitle = "Facets by Success of Attempt") +
+  facet_wrap(.~success, labeller = labeller(success = success.labs))
 ```
 
 ![](Regression-and-Predict_files/figure-gfm/unnamed-chunk-7-2.png)<!-- -->
